@@ -1,6 +1,7 @@
 {
     "name": "backendtea/phpstan-multiple-error-formatter",
     "keywords": ["dev"],
+    "description": "A PHPStan extension to show multiple error formats in one go",
     "type": "phpstan-extension",
     "require": {
         "php": "^8.1",
