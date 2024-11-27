@@ -8,8 +8,8 @@ use PHPStan\Command\AnalysisResult;
 use PHPStan\Command\ErrorFormatter\ErrorFormatter;
 use PHPStan\Command\Output;
 use PHPStan\File\RelativePathHelper;
-
 use PHPStan\ShouldNotHappenException;
+
 use function array_key_exists;
 use function count;
 use function file_put_contents;
@@ -25,7 +25,7 @@ final class JsonFileErrorFormatter implements ErrorFormatter
         private bool $pretty,
         private string $fileLocation,
     ) {
-        if(!$this->fileLocation) {
+        if (! $this->fileLocation) {
             throw new ShouldNotHappenException('File location must be set with `errorFormatters.jsonFile`');
         }
     }

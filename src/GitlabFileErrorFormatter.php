@@ -8,8 +8,8 @@ use PHPStan\Command\AnalysisResult;
 use PHPStan\Command\ErrorFormatter\ErrorFormatter;
 use PHPStan\Command\Output;
 use PHPStan\File\RelativePathHelper;
-
 use PHPStan\ShouldNotHappenException;
+
 use function file_put_contents;
 use function hash;
 use function implode;
@@ -24,7 +24,7 @@ final class GitlabFileErrorFormatter implements ErrorFormatter
         private RelativePathHelper $relativePathHelper,
         private string $fileLocation,
     ) {
-        if(!$this->fileLocation) {
+        if (! $this->fileLocation) {
             throw new ShouldNotHappenException('File location must be set with `errorFormatters.gitlabFile`');
         }
     }
