@@ -1,5 +1,6 @@
 {
     "name": "backendtea/phpstan-multiple-error-formatter",
+    "keywords": ["dev"],
     "type": "phpstan-extension",
     "require": {
         "php": "^8.1",
