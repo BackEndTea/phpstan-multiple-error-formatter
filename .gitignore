@@ -1,0 +1,12 @@
+.idea/
+.vscode/
+*.swp
+
+/vendor/
+composer.lock
+.phpunit.cache
+.phpcs-cache
+
+phpstan.json
+phpstan-pretty.json
+phpstan-gitlab.json

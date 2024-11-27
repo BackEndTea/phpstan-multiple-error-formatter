@@ -1,0 +1,16 @@
+includes:
+    - config.neon
+
+parameters:
+    level: max
+    errorFormat: multiple
+    errorFormatters:
+        formatters:
+            - table
+            - gitlabFile
+            - prettyJsonFile
+        jsonFile: %currentWorkingDirectory%/phpstan.json
+        gitlabFile: %currentWorkingDirectory%/phpstan-gitlab.json
+    paths:
+        - src
+        - tests

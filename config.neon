@@ -1,0 +1,32 @@
+parametersSchema:
+	errorFormatters: structure([
+	    formatters: listof(string())
+	    jsonFile: string()
+	    gitlabFile: string()
+	])
+
+parameters:
+    errorFormatters:
+        formatters: []
+        jsonFile: ""
+        gitlabFile: ""
+
+services:
+    errorFormatter.multiple:
+        class: BackEndTea\ErrorFormatter\ChainErrorFormatter
+        arguments:
+            formatters: %errorFormatters.formatters%
+    errorFormatter.jsonFile:
+        class: BackEndTea\ErrorFormatter\JsonFileErrorFormatter
+        arguments:
+            pretty: false
+            fileLocation: %errorFormatters.jsonFile%
+    errorFormatter.prettyJsonFile:
+        class: BackEndTea\ErrorFormatter\JsonFileErrorFormatter
+        arguments:
+            pretty: true
+            fileLocation: %errorFormatters.jsonFile%
+    errorFormatter.gitlabFile:
+        class: BackEndTea\ErrorFormatter\GitlabFileErrorFormatter
+        arguments:
+            fileLocation: %errorFormatters.gitlabFile%
